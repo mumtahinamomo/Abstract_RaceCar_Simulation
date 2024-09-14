@@ -34,7 +34,6 @@ public class SimulationDriverC {
 		
 	/**
 	 * Runs a short program that allows the user to set up the simulation for part B. The user will be prompted to 
-	 * set up some number of Cars using the format outlined on the PDF.
 	 * @return an array of Cars constructed by the user
 	 */
 	public static Car[] getSomeCars() {
