@@ -1,0 +1,60 @@
+package main;
+public class RaceCar extends Car {
+  
+	/**
+     * Default constructor for RaceCar class.
+     */
+  public RaceCar() {
+    super(40, 3); //Initializes speed to 40 and strength to 3
+    setDamagedSpeed(getSpeed() - (getStrength() * 5)); //calculates damaged speed
+  }
+  /**
+   *Constructor(parameter) for RaceCar class. 
+   * @param speed The speed value of the race car.
+   * @param strength The strength value of the race car.
+   */
+  public RaceCar(int speed, int strength) {
+	    super(speed, strength);
+	    checkSpeed();
+	    checkStrength();
+	    calculateDamagedSpeed();
+	}
+  /**
+   * Checks and limits the speed of the race car within an acceptable range.
+   */
+   public void checkSpeed() {
+	    int speed = getSpeed();
+	    if (speed > 55) {
+	        setSpeed(55);
+	    } else if (speed < 30) {
+	        setSpeed(30);
+	    }
+	}
+
+   /**
+    * Checks and limits the strength of the race car within an acceptable range.
+    */
+   public void checkStrength() {
+	    int strength = getStrength();
+	    if (strength > 4) {
+	        setStrength(4);
+	    } else if (strength < 2) {
+	        setStrength(2);
+	    }
+	}
+   /**
+    * Calculates the damaged speed of the race car.
+    */
+    public void calculateDamagedSpeed() {
+	    setDamagedSpeed(getSpeed() - (getStrength() * 5));
+	}
+	
+    /**
+     * Returns a string representation of the RaceCar object.
+     * 
+     * @return A string representation of the object.
+     */
+    public String toString() {
+      return "RaceCar" + getSpeed() + "/" + getStrength();
+  }
+}
